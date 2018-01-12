@@ -8,6 +8,7 @@ class MyQueue
   end
 
   def enqueue(element)
+    
   end
 
   def dequeue

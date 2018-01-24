@@ -1,3 +1,5 @@
+require 'pry'
+
 class HashClass
 
   def initialize(size)
@@ -6,13 +8,13 @@ class HashClass
 
   def []=(key, value)
     index = index(key, size)
-
+    
     if @items[index] == nil || @items[index].value == value
       @items[index] = HashItem.new(key, value)
     else
       resize
     end
-    
+
     puts "HashClass: #{@items}"
   end
 
@@ -26,11 +28,14 @@ class HashClass
     old_array = @items
     new_size = size * 2
     @items = Array.new(new_size)
+    puts "old array: #{old_array}"
+    
     old_array.each do |item|
       if item != nil
         @items[index(item.key, new_size)] = item
       end
     end
+    puts "new array: #{@items}"
   end
 
   # Returns a unique, deterministically reproducible index into an array

@@ -1,5 +1,3 @@
-require 'pry'
-
 class HashClass
 
   def initialize(size)
@@ -9,10 +7,22 @@ class HashClass
   def []=(key, value)
     index = index(key, size)
     
-    if @items[index] == nil || @items[index].value == value
+    # if @items[index] == nil || @items[index].value == value
+    #   @items[index] = HashItem.new(key, value)
+    # else
+    #   resize
+    # end
+
+    if @items[index] == nil
+      # If the place in array is nil, add this new item in place.
       @items[index] = HashItem.new(key, value)
-    else
+    elsif @items[index].key == key && @items[index].value != value
+      # if inserted item's key matches an existing key && their values don't match, then it is a collision. Resize the array.
       resize
+    elsif @items[index].key != key
+      # if inserted item's key does not match with any available key, then the hash has run out of places to store this item. So you resize the internal array and then run the insertion again using recursion.
+      resize
+      self.[]=(key, value)
     end
 
     puts "HashClass: #{@items}"

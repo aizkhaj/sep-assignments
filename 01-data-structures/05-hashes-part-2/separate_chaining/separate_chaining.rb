@@ -100,4 +100,22 @@ class SeparateChaining
     end
   end
 
+  def print
+    puts "#{self}: @items ["
+    @items.each do |list|
+      if list == nil
+        puts "it's empty in here"
+      else
+        item = list.head
+        items = "\s#{item} @key: \"#{item.key}\" @value: \"#{item.value}\""
+        while item.next != nil
+          items += ", #{item} @key: \"#{item.key}\" @value: \"#{item.value}\""
+          item = item.next
+        end
+        puts "#{items}"
+      end
+    end
+    puts "],"
+    puts "LOAD FACTOR: #{load_factor}"
+  end
 end

@@ -34,10 +34,68 @@ class BinarySearchTree
   end
 
   def delete(root, data)
+    # we need to locate our node first, because data is always node.title. We can't compare a string with the root to iterate with.
     node = find(root, data)
-
     
+    # return nil if root or data are nil.
+    if root == nil || data == nil
+      return nil
+    # data is usually a node.title so this may not work.
+    elsif data.rating < root.rating
+      root.left = delete(root.left, data)
+    elsif data.rating > root.rating
+      root.right = delete(root.right, data)
+    else
+      # we found the node
+      if root.left == nil && root.right == nil
+        return root
+      elsif root.right == nil
+        return root.left
+      elsif root.left == nil
+        return root.right
+      else
+        temp = findmin(root.right)
+        return temp
+        #find minimum and then return it
+      end
+    end
   end
+    
+  # Trying out some code found in Python online.
+    # if root == nil
+    #   return root
+    # elsif data.rating < root.rating
+    #   root.left = delete(root.left, data)
+    # elsif data.rating > root.rating
+    #   root.right = delete(root.right, data)
+    # else
+    #   if !root.right
+    #     return root.left
+    #   end
+    #   if !root.left
+    #     return root.right
+    #   end
+    #   temp = root.right
+    #   minimum = temp.rating
+    #   while temp.left
+    #     temp = temp.left
+    #     minimum = temp.rating
+    #   end
+    #   root.rating = minimum
+    #   root.right = delete(root.right, root.rating)
+    # end
+    # return root
+
+  # write a function to find minimum
+  def findmin(root)
+    if root.left == nil
+      return root
+    else 
+      findmin(root.left)
+    end
+  end
+
+
 
   # Recursive Breadth First Search
   def printf(children=nil)

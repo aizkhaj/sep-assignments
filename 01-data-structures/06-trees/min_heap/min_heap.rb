@@ -7,7 +7,7 @@ class MinHeap
     @root = root
     # like the specs, let's say this root = Node.new('The Matrix', 67). In all of the following methods, this is what will passed in as root.
   end
-
+  
   def insert(root, node)
     parent = root
 

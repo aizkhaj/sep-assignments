@@ -1,0 +1,28 @@
+3 Primitive Algorithms:
+
+
+1. Calculate a tip
+DEF CALC_TIP(bill_total, tip_percent)
+  SET tip
+  COMPUTE bill_total * (1 + tip_percent/100), ASSIGN to tip
+  RETURN tip
+END
+
+2. Feed your pet
+DEF FEED_PET(bowl)
+  IF bowl is empty THEN
+    BUMP food into bowl
+  ENDIF
+END
+
+3. Withdraw money from ATM
+DEF WITHDRAW_MONEY(amount)
+  IF user is logged in
+    DISPLAY balance
+    COMPUTE balance =- amount
+    PRINT amount from machine
+    DISPLAY balance
+  ELSE
+    ask user if they are logged in
+  ENDIF
+END

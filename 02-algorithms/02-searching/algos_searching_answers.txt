@@ -1,0 +1,45 @@
+1. Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using linear search?
+
+Since collection = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+It would take 7 iterations since 'g' is 7th in the collection.
+
+2. Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using binary search?
+
+Since collection = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+Iterations:
+#1: low = a, high = g, mid = d
+#2: low = e, high = g, mid = f
+#3: low = g, high = g, mid = g
+
+It would take 3 iterations using binary search to find the location of 'g'.
+
+
+3. Calculate fib(10), fib(11), fib(12) by hand.
+fib(0) = 0
+fib(1) = 1
+fib(2) = 1+0 = 1
+fib(3) = 1+1 = 2
+fib(4) = 1+2 = 3
+fib(5) = 2+3 = 5
+fib(6) = 3+5 = 8
+fib(7) = 5+8 = 13
+fib(8) = 8+13 = 21
+fib(9) = 13+21 = 34
+fib(10) = 21+34 = 55
+fib(11) = 34+55 = 89
+fib(12) = 55+89 = 144
+
+===============================================================
+===============================================================
+
+Compare the time it takes to run fib(20) between the iterative solution from the previous checkpoint and recursive solutions.
+- It took 0.000008 seconds to run fib(20) iteratively.
+- It took 0.001232 seconds to run fib(20) recursively.
+
+1. Given an unsorted collection of a million items, which algorithm would you choose between linear search and binary search? Would you use an iterative or recursive solution? Explain your reasoning.
+
+Would use linear search since we have an unsorted collection (can't use an unsorted collection with binary). We'd have to iterate through each since we don't have an order of some sort to give direction to a recursive solution. It will be expensive to first sort our collection before running it recursively.
+
+2. Given a sorted collection of a million items, which algorithm would you choose between linear search and binary search? Would you use an iterative or recursive solution? Explain your reasoning.
+
+Using binary search would be much quicker/efficient here since we have a sorted collection. As seen above, it took fewer iterations to find a solution with a divide and conquer approach.

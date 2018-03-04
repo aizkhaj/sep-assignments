@@ -1,3 +1,5 @@
+require 'benchmark'
+
 def fib(n)
   if (n == 0)
     return 0
@@ -7,3 +9,5 @@ def fib(n)
     return fib(n-1) + fib(n-2)
   end
 end
+
+puts Benchmark.measure {fib(20)}

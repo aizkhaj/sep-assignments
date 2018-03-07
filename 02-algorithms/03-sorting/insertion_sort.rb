@@ -1,4 +1,6 @@
 def insertion_sort(collection)
+  return nil if collection == nil
+
   sorted_collection = [collection.delete_at(0)]
 
   for val in collection

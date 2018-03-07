@@ -1,0 +1,30 @@
+Here's one sample of the benchmarking results I've received.
+
+                user       system       total        real
+quick_sort      0.000000   0.000000   0.000000   (0.000078)
+bubble_sort     0.000000   0.000000   0.000000   (0.000017)
+bucket_sort     0.000000   0.000000   0.000000   (0.000095)
+heap_sort       0.000000   0.000000   0.000000   (0.000129)
+insertion_sort  0.000000   0.000000   0.000000   (0.000147)
+merge_sort      0.000000   0.000000   0.000000   (0.000188)
+selection_sort  0.000000   0.000000   0.000000   (0.000207)
+
+Ranking benchmark results
+1. bubble_sort: (0.000017)
+2. quick_sort: (0.000078)
+3. bucket_sort: (0.000095)
+4. heap_sort: (0.000129)
+5. insertion_sort: (0.000147)
+6. merge_sort: (0.000188)
+7. selection_sort: (0.000207)
+
+Dataset for barchart (in ms unit of time):
+1. 17
+2. 78
+3. 95
+4. 129
+5. 147
+6. 188
+7. 207
+
+See 'sorting_chart.rb' for bar chart.

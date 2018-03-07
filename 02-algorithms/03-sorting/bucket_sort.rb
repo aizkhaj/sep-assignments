@@ -1,26 +1,22 @@
-require 'benchmark'
+require_relative 'insertion_sort'
 
-def bubble_sort(array)
-  n = array.length
-  loop do
-    swapped = false
-
-    (n-1).times do |i|
-      if array[i] > array[i+1]
-        array[i], array[i+1] = array[i+1], array[i]
-        swapped = true
-      end
+def bucket_sort(array)
+  min = array.min
+  max = array.max
+  n = array.count
+  buckets = Array.new(10)
+  divider = ((max + 1) / buckets.count).ceil
+  
+  array.each do |element|
+    j = (element / divider).floor
+    
+    if buckets[j] == nil
+      buckets[j] = [element]
+    else
+      buckets[j] << element
     end
-
-    break if not swapped
   end
-
-  array
+  
+  buckets.map! {|bucket| insertion_sort(bucket) }
+  return buckets.compact.flatten
 end
-
-arr = [9, 7, 5, 11, 12, 2, 14, 3, 10, 6]
-
-sorted = bubble_sort(arr)
-p sorted
-
-puts Benchmark.measure {sorted}

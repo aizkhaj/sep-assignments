@@ -51,9 +51,3 @@ def heap_sort(array)
   end
   array
 end
-
-arr = [9, 7, 5, 11, 12, 2, 14, 3, 10, 6]
-sorted = heap_sort(arr)
-p sorted
-
-puts Benchmark.measure {sorted}

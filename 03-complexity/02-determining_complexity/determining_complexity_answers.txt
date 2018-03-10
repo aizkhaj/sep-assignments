@@ -1,0 +1,11 @@
+1. Constant time, O(1), because it is going to execute with the same resources everytime, no matter the size of the input due just printing a string with the n interpolated.
+
+2. Linear time, O(n). Other than the assigning of the variable (which is constant time), the iterative process is linear since it has to go through each location in the collection to find the item in question.
+
+3. Here, we are trying to find the largest item from a collection of subcollections: e.g. [[1, 2], [3, 4]]. In order for this to work, not only are we iterating through the collection, but also the subcollection to find the largest item. Using an iterative process to do both, we should be looking at a linear time of O(n) since we need to iterate through the entire collection and subcollection to locate our target value. The larger the input, the higher the iterations that need to occur.
+
+4. If you perform the fibonacci calculations (as done recursively here), you can find that its graph looks exponential. Further research of its Big O reveals that it is of O(2^n). If you think about it, when doing so recursively, we are counting on running calculations that have already been done previously, to determine the current result, as with: numbers(n-1) + numbers(n-2). To help conceptualize, we can think of it as "if I increase n by 1, then runtime is doubled." - leading to an exponential rise.
+
+5. Given this algorithm is performing the Fibonacci calculation iteratively, it should be O(n) - linear time. We will be iterating through the entire sequence leading up to n - which means that there will be n operations.
+
+6. This would be a function for Quick sort (as similarly implemented in the last checkpoint). Quick sort has Big O of O(n^2) - quadratic time. According to Wikipedia for Quick Sort, and its worst case analysis, the algorithm makes nested calls with (n-1) when doing the partition. Recursively, this could look something like (n-1)(n-1) etc. This results in O(n^2) time.

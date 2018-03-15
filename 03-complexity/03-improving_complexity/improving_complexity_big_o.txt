@@ -1,0 +1,9 @@
+Here are the benchmark results:
+
+                        user     system      total        real
+code_optimization    0.000000   0.000000   0.000000  (0.002989)
+time_complexity      0.010000   0.000000   0.010000  (0.003000)
+space_complexity     0.000000   0.000000   0.000000  (0.000637)
+poor_code            0.000000   0.000000   0.000000  (0.003084)
+
+As can be seen, our improved versions are more efficient than the poor code we had in place (in this case very slightly).

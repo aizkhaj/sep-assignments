@@ -32,7 +32,6 @@ class Greedy
     while current_city.visited == false
       neighbor_cities = current_city.neighbors
       next_city = neighbor_cities[0]
-      p next_city
       
       for current_neighbor in neighbor_cities
         if current_neighbor.distance < next_city.distance
@@ -41,38 +40,8 @@ class Greedy
       end
       current_city.visited = true
       @tour << current_city.name
-      current_city = next_city
+      current_city = next_city.city
     end
     return @tour
   end
 end
-
-
-
-#   def nearest_neighbor_path(current_city)
-#     while current_city.visited == false
-#       # p current_city.name
-#       p current_city.neighbors
-#       neighbor_cities = current_city.neighbors
-#       next_city = neighbor_cities[0]
-      
-#       neighbor_cities.each do |neighbor|
-#         if neighbor.distance < next_city.distance
-#           next_city = neighbor
-#           # @tour << next_city.name
-#         end
-#         break
-#       end
-
-#       # for current_neighbor in neighbor_cities
-#       #   if current_neighbor.distance < next_city.distance
-#       #     next_city = current_neighbor
-#       #   end
-#       # end
-#       current_city.visited = true
-#       @tour << current_city.name
-#       # nearest_neighbor_path(next_city)
-#     end
-#     p @tour
-#     return @tour
-#   end
